@@ -1,0 +1,19 @@
+title: Stable Diffusion Results - Frederik Holm Strøm
+timezone: Etc/UTC
+
+sass:
+  style: compressed
+
+defaults:
+  - scope:
+      path: assets/img
+    values:
+      image: true
+
+exclude:
+  - README.md
+  - run.sh
+  - stable-diffusion-2.ipynb
+
+plugins:
+  - jekyll-target-blank

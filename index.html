@@ -1,0 +1,31 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+  </head>
+  <body>
+      <main>
+        <p>
+            Some nice results achieved using <a href="https://github.com/Stability-AI/stablediffusion" target="_blank">Stable Diffusion 2</a> on an Nvidia 1070 Founders Edition.
+        </p>
+        <p>
+            See the <a href="https://github.com/frederikstroem/stable-diffusion">associated GitHub repository</a> for more information, including the Jupyter Notebook.
+        </p>
+        <div class="results">
+            {% for image in site.static_files %}
+                {% if image.path contains 'img' %}
+                    <article>
+                        <a href="{{ site.baseurl }}{{ image.path }}" target="_blank"><img src="{{ site.baseurl }}{{ image.path }}" alt="Stable Diffusion image." /></a>
+                    </article>
+                {% endif %}
+            {% endfor %}
+        </div>
+      </main>
+  </body>
+</html>
